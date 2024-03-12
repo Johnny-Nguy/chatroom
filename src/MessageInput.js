@@ -9,4 +9,3 @@ function MessageInput(props) {
 }
 
 export default MessageInput;
-
