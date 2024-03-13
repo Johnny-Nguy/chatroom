@@ -5,12 +5,22 @@ function ChatLog(props) {
     <div className="chat-log">
       {
         props.chatLog.map((chat, idx) => {
-          return (
-            <div className="chat-item" key={'chat'+idx}>
-              <h6>{chat.username}</h6>
-              <h4>{chat.message}</h4>
-            </div>
-          )
+          if (props.username === chat.username) {
+            return (
+              <div className="chat-item chat-from-me" key={'chat'+idx}>
+                <h6>{chat.username}</h6>
+                <h4>{chat.message}</h4>
+              </div>
+            )
+          } else {
+            return (
+              <div className="chat-item" key={'chat'+idx}>
+                 <h6>{chat.username}</h6>
+                 <h4>{chat.message}</h4>
+              </div>
+            )
+          }
+          
         })
       }
     </div> 

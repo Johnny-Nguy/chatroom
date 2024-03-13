@@ -17,12 +17,13 @@ function App() {
   const [username, setUsername] = useState('Roger');
   const [messageInput, setMessageInput] = useState('');
   const [chatLog, setChatLog] = useState(testChatLog);
+  const onChange = (evt) => setMessageInput(evt.target.value);
   
   return (
     <div className="chat-container">
       <Username username={username} />
-      <ChatLog chatLog={chatLog} />
-      <MessageInput messageInput={messageInput} />
+      <ChatLog chatLog={chatLog} username={username} />
+      <MessageInput messageInput={messageInput} onChange={onChange} />
     </div>
   );
 }
